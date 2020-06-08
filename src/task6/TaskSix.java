@@ -2,9 +2,9 @@ package task6;
 
 public class TaskSix {
 	public static void execute(int a, int d) {
-		long progressionInt = a;
+		int progressionInt = a;
 		long progressionLong = a;
-		long nForInt = 1;
+		int nForInt = 1;
 		long nForLong = 1;
 		while (progressionInt < Integer.MAX_VALUE / nForInt && progressionInt > Integer.MIN_VALUE / nForInt) {
 			progressionInt = (a + (a + (d * nForInt))) / 2;
