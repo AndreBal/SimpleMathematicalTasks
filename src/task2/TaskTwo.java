@@ -6,21 +6,49 @@ public class TaskTwo {
 			System.out.println("Second task. Wrong number. Your day should be bigger than 0 and less than 366");
 
 		} else {
-			int currentDay = day;
-			String month = "";
-			String[] months = { "january", "february", "march", "april", "may", "june", "july", "august", "september",
-					"october", "november", "december" };
-			int[] daysInMonth = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-			for (int i = 0; i < 12; i++) {
-				if (daysInMonth[i] < currentDay) {
-					currentDay -= daysInMonth[i];
-				} else {
-					month = months[i];
+			int month = 1;
+			boolean isMonthFound = false;
+			while (!isMonthFound) {
+				switch (month) {
+				case (1):
+				case (3):
+				case (5):
+				case (7):
+				case (8):
+				case (10):
+				case (12):
+					if (day > 31) {
+						day -= 31;
+						month++;
+					} else {
+						isMonthFound = true;
+					}
+					break;
+
+				case (2):
+					if (day > 28) {
+						day -= 28;
+						month++;
+					} else {
+						isMonthFound = true;
+					}
+					break;
+
+				case (4):
+				case (6):
+				case (9):
+				case (11):
+					if (day > 30) {
+						day -= 30;
+						month++;
+					} else {
+						isMonthFound = true;
+					}
 					break;
 				}
 			}
 
-			System.out.println("Second task. Day " + day + " is " + currentDay + " of " + month);
+			System.out.println("Second task. "+ day  +" day of month number " + month);
 		}
 	}
 
